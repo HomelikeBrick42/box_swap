@@ -1,6 +1,9 @@
 [package]
 name = "box_swap"
-version = "0.1.0"
+version = "1.0.0"
 edition = "2024"
+description = "An atomic verison of Option<Box<T>>."
+license = "MIT"
+repository = "https://github.com/HomelikeBrick42/box_swap"
 
 [dependencies]

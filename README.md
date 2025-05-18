@@ -1,5 +1,9 @@
 # box_swap
 
+[![Latest Version](https://img.shields.io/crates/v/box_swap.svg)](https://crates.io/crates/box_swap)
+[![Rust Documentation](https://docs.rs/box_swap/badge.svg)](https://docs.rs/box_swap)
+![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
+
 An atomic verison of `Option<Box<T>>`.
 
 One use case for this is being able to have one thread send many updates to another, but the other thread only cares about looking at the latest value.

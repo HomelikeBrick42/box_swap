@@ -62,6 +62,16 @@ impl<T> BoxSwap<T> {
         self.take_mut()
     }
 
+    /// Gets a mutable reference to the value
+    pub fn get_mut(&mut self) -> Option<&mut T> {
+        let ptr = *self.ptr.get_mut();
+        if ptr.is_null() {
+            None
+        } else {
+            Some(unsafe { &mut *ptr })
+        }
+    }
+
     /// [`BoxSwap::swap`] but without any atomic operations
     pub fn swap_mut(&mut self, value: Option<Box<T>>) -> Option<Box<T>> {
         let new = value.map(Box::into_raw).unwrap_or_else(core::ptr::null_mut);
